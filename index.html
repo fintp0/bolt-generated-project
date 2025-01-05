@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSV Visualization</title>
+        <style>
+          .chart-container {
+            width: 800px;
+            height: 500px;
+            margin: 20px auto;
+            position: relative;
+          }
+          
+          .controls {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+          }
+          
+          .filter-group {
+            margin: 10px 0;
+          }
+          
+          @media (max-width: 900px) {
+            .chart-container {
+              width: 90%;
+              height: 400px;
+            }
+          }
+          
+          @media (max-width: 600px) {
+            .chart-container {
+              height: 300px;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div id="app">
+          <h1>CSV Data Visualization</h1>
+          <div class="controls">
+            <input type="file" id="csvFileInput" accept=".csv" />
+            <div id="filterControls" style="display: none;">
+              <h3>Filters</h3>
+              <div id="filterGroups"></div>
+              <div style="margin: 20px 0;">
+                <select id="xAxisSelect">
+                  <option value="">Select X Axis</option>
+                </select>
+                <select id="yAxisSelect">
+                  <option value="">Select Y Axis</option>
+                </select>
+                <button id="visualizeBtn">Visualize</button>
+              </div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart"></canvas>
+          </div>
+        </div>
+        <script type="module" src="/src/main.js"></script>
+      </body>
+    </html>
